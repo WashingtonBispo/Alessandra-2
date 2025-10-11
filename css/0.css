@@ -80,3 +80,11 @@
 	font-size: 26px !important;
 	font-family: 'Noto Sans', 'Open Sans' !important;
 }
+
+.elementor-widget-heading .elementor-heading-title[class*="elementor-size-"] > a{
+  font-size: large !important;
+}
+
+.elementor-icon-box-description{
+  font-size: 18px !important;
+}
