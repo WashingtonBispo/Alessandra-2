@@ -37,6 +37,30 @@
     width: 100%;
 }
 
+@media screen and (max-width: 1250px){
+	.sub-container-header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    }
+
+    .google-image{
+        width: auto
+    }
+
+    .info-header-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    }
+    #onde-estamos{
+        margin-bottom: 16px ;
+        margin-top: 16px ;
+    }
+}
+
+
 .google-image{
     margin-left: 32px;
     margin-top: 16px;
@@ -56,4 +80,107 @@
     justify-content: space-between;
     color: white;
     font-family: poppins;
+}
+
+.container {
+  text-align: center;
+  margin: 100px auto;
+  width: 80%;
+  position: relative;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.personalize-container {
+  position: relative;
+  display: inline-block;
+}
+
+.wave {
+  position: absolute;
+  bottom: -10px; /* Ajuste fino para posicionar a linha abaixo do texto */
+  left: 0;
+  width: 100%;
+  height: 20px;
+  stroke: #0d76ae;
+  fill: transparent;
+  stroke-width: 3;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease;
+  pointer-events: none; /* Garante que não interfere com cliques */
+}
+
+.wave path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: none;
+}
+
+.personalize-container.visible .wave {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.personalize-container.visible .wave path {
+  animation: draw 2s ease forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-item {
+  flex: 0 0 calc(100% / 3); /* Três visíveis */
+  padding: 40px;
+  background-color: #f0f0f0;
+  text-align: center;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 1.2rem;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
 }
